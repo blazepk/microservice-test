@@ -2,7 +2,7 @@
 ## Stubhub 
 ### Ticking app
 
-// command to run --->  skaffold deploy
+// command to run --->  skaffold dev
 
 # ingress yaml new version 
 
