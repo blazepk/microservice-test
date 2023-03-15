@@ -15,4 +15,10 @@ spec:
      containers:
       - name: auth
         image: blazepk/auth
+        env: 
+          - name: JWT_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secrete
+                key: JWT_KEY
 
