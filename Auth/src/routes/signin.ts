@@ -3,8 +3,7 @@ import type { Request , Response } from "express"
 import {body} from "express-validator"
 import  jwt  from 'jsonwebtoken';
 
-import {validateRequest} from "../middlewares/validate-request"
-import { BadRequestError } from "../errors/bad-request-error"
+import {validateRequest , BadRequestError} from "@ticket-template/common"
 import { User } from "../models/User"
 import { PasswordManager } from './../services/password-hashing';
 

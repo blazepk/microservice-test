@@ -4,10 +4,6 @@ import { json } from "body-parser"
 import mongoose from "mongoose"
 import cookieSession from "cookie-session"
 //
-import { currentUserRouter } from "./routes/current-user"
-import { signinRouter } from "./routes/signin"
-import { signoutRouter } from "./routes/signout"
-import { signupRouter } from "./routes/signup"
 import { errorHandler , NotFoundError } from "@ticket-template/common"
 
 const app = express()
@@ -19,10 +15,7 @@ app.use(cookieSession({
     secure : process.env.NODE_ENV !== "test" , 
     httpOnly : process.env.NODE_ENV !== "test"
 }))
-app.use("/api/users", currentUserRouter)
-app.use("/api/users", signinRouter)
-app.use("/api/users", signoutRouter)
-app.use("/api/users", signupRouter)
+
 app.all("*" , () => {
     throw new NotFoundError()
 })

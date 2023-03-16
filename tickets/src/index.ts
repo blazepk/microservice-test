@@ -8,11 +8,10 @@ const start = async () => {
         throw new Error("JWT KEY not found in enviroment variable")
     }
     if(!process.env.MONGO_URI){
-        throw new Error("MONGO_URI not found in enviroment variable")
+        throw new Error("MONGO URI not found in enviroment variable")
     }
    try{ 
-
-    await mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect(process.env.MONGO_URI!)
     console.log("connected to mongo db")}
     catch(err){
         console.error(err)
