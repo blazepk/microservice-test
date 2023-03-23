@@ -6,8 +6,11 @@ declare global {
   var signin: () => string[];
 }
 
+jest.mock('../__mocks__/nats-wrapper.ts')
+
 let mongo: any;
 beforeAll(async () => {
+  jest.clearAllMocks()
   process.env.JWT_KEY = "asdfasdf";
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 

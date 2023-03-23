@@ -24,9 +24,9 @@ app.use(createTicketRouter)
 app.use(showTicketRouter)
 app.use(indexTicketRouter)
 app.use(updateTicketRouter)
-app.use(errorHandler)
 app.all("*" , () => {
     throw new NotFoundError()
 })
+app.use(errorHandler)
 
 export {app}
